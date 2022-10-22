@@ -47,7 +47,7 @@ const AppLayout: NextPage = () => {
     if (numberOfShops > 0) {
       router.push("/app/menus");
     }
-  }, [numberOfShops]);
+  }, [numberOfShops, router]);
 
   return (
     <div className="flex h-screen flex-col bg-gray-100 dark:bg-gray-900 dark:text-white">
