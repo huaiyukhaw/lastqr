@@ -168,14 +168,14 @@ const LoginPage: NextPage = () => {
                       >
                         Password
                       </label>
-                      <Link href="/forgot">
+                      {/* <Link href="/forgot">
                         <a
                           className="text-sm font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
                           href="../../examples/html/recover-account.html"
                         >
                           Forgot password?
                         </a>
-                      </Link>
+                      </Link> */}
                     </div>
                     <div className="relative">
                       <input
