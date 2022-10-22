@@ -1,3 +1,42 @@
+@import url("https://rsms.me/inter/inter.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply scrollbar-hide;
+  }
+
+  html {
+    @apply bg-gray-100 dark:bg-gray-900 dark:text-white;
+  }
+}
+
+@layer utilities {
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  .scrollbar-default::-webkit-scrollbar {
+    display: block;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-default {
+    -ms-overflow-style: auto; /* IE and Edge */
+    scrollbar-width: auto; /* Firefox */
+  }
+
+  .overflow-touch {
+    -webkit-overflow-scrolling: touch;
+  }
+}
