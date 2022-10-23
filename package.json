@@ -19,7 +19,7 @@
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-toast": "^1.0.0",
     "@shortcm/qr-image": "^6.2.0",
-    "@supabase/supabase-js": "^2.0.0-rc.10",
+    "@supabase/supabase-js": "^2.0.4",
     "clsx": "^1.2.1",
     "nanoid": "^4.0.0",
     "next": "12.3.1",

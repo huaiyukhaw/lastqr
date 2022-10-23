@@ -59,10 +59,8 @@ const EditorPage: NextPage = () => {
   };
 
   const [isSaving, setIsSaving] = useState<boolean | null>(null);
-  const [toastId, setToastId] = useState<string>("");
 
   const [currentMenu, setCurrentMenu] = useState<Menu>({} as Menu);
-
   const [isMenuModalOpen, setIsMenuModalOpen] = useState<boolean>(false);
   const [isDishModalOpen, setIsDishModalOpen] = useState<boolean>(false);
   const [isCollectionModalOpen, setIsCollectionModalOpen] =
@@ -457,11 +455,11 @@ const EditorPage: NextPage = () => {
 
   useEffect(() => {
     if (isSaving === true) {
-      setToastId(toast.loading("Saving"));
+      toast.loading("Saving", { id: "saving" });
     } else if (isSaving === false) {
-      toast.success("Saved!", { id: toastId });
+      toast.success("Saved!", { id: "saving" });
     }
-  }, [isSaving, toastId]);
+  }, [isSaving]);
 
   useEffect(() => {
     if (currentMenu) {
