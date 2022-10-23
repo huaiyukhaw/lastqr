@@ -4,6 +4,7 @@ import { useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import { useRouter } from "next/router";
 import { useAuth } from "../context/authContext";
+import { baseDomain } from "../lib/constants";
 
 const LoginPage: NextPage = () => {
   const { session } = useAuth();
@@ -40,7 +41,7 @@ const LoginPage: NextPage = () => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: "http://192.168.0.7:3000/app",
+          redirectTo: `https://${baseDomain}/app`,
         },
       });
       if (error) throw error;

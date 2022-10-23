@@ -10,6 +10,7 @@ import { getPNG } from "@shortcm/qr-image/lib/png";
 import { getPDF } from "@shortcm/qr-image/lib/pdf";
 import Image from "next/image";
 import { Qr, QrFormats, QrUrls } from "../../lib/types";
+import { baseDomain } from "../../lib/constants";
 
 const QrCodePage: NextPage = () => {
   let qrCodes: Qr[] = [
@@ -42,7 +43,7 @@ const QrCodePage: NextPage = () => {
 
   useEffect(() => {
     const getQrUrls = async () => {
-      const shopUrl = `http://192.169.0.7:3000/m/${shop.username}`;
+      const shopUrl = `https://${baseDomain}/m/${shop.username}`;
 
       const options = {
         color: 0x000000ff,
@@ -159,12 +160,12 @@ const QrCodePage: NextPage = () => {
                     </span>
                     <br />
                     <a
-                      href={`http://localhost:3000/m/${shop.username}`}
+                      href={`https://${baseDomain}/m/${shop.username}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
                     >
-                      lastqr.com/m/{shop.username}
+                      {baseDomain}/m/{shop.username}
                     </a>
                   </div>
                 </div>
