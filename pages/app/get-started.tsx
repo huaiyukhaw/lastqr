@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 const AppLayout: NextPage = () => {
   const { session, loading } = useAuth();
-  const { numberOfShops } = useShop();
+  const { loaded, numberOfShops } = useShop();
   const router = useRouter();
 
   const routes = [
@@ -44,10 +44,10 @@ const AppLayout: NextPage = () => {
   }
 
   useEffect(() => {
-    if (numberOfShops > 0) {
+    if (loaded && numberOfShops > 0) {
       router.push("/app/menus");
     }
-  }, [numberOfShops, router]);
+  }, [loaded, numberOfShops, router]);
 
   return (
     <div className="flex h-screen flex-col bg-gray-100 dark:bg-gray-900 dark:text-white">

@@ -10,6 +10,7 @@ import type {
 import { useAuth } from "./authContext";
 
 export type ShopContextType = {
+  loaded: boolean;
   shops: ShopPreview[];
   shop: Shop;
   menus: Menu[];
@@ -54,6 +55,7 @@ export const ShopProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
   const { session } = useAuth();
+  const [loaded, setLoaded] = useState<boolean>(false);
   const [shops, setShops] = useState<ShopPreview[]>([]);
   const [menus, setMenus] = useState<Menu[]>([]);
   const [currentShopId, setCurrentShopId] = useState<string | null>(null);
@@ -128,6 +130,7 @@ export const ShopProvider: React.FC<React.PropsWithChildren> = ({
 
     if (data) {
       setShops(data);
+      setLoaded(true);
     }
   };
 
@@ -492,6 +495,7 @@ export const ShopProvider: React.FC<React.PropsWithChildren> = ({
   };
 
   const value = {
+    loaded: loaded,
     shops: shops,
     shop: shop,
     menus: menus,

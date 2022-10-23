@@ -18,7 +18,7 @@ type AppLayoutProps = {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   const { session, loading } = useAuth();
-  const { numberOfShops, currentShopId } = useShop();
+  const { loaded, numberOfShops } = useShop();
   const router = useRouter();
   const currentPath = router.pathname;
 
@@ -48,10 +48,10 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   }
 
   useEffect(() => {
-    if (numberOfShops < 1) {
+    if (loaded && numberOfShops < 1) {
       router.push("/app/get-started");
     }
-  }, [numberOfShops, router]);
+  }, [loaded, numberOfShops, router]);
 
   return (
     <div className="flex h-screen flex-col bg-gray-100 dark:bg-gray-900 dark:text-white">

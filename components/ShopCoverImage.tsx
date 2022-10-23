@@ -68,14 +68,14 @@ const ShopCoverImage: React.FC<ShopCoverImageProps> = ({ url, onUpload }) => {
           <span>Loading</span>
         </div>
       ) : imageUrl ? (
-        <Image
-          src={imageUrl}
-          alt="Avatar"
-          className="rounded-lg object-cover"
-          layout="fill"
-          // height={176}
-          // width={176}
-        />
+        <div>
+          <Image
+            src={imageUrl}
+            alt="Avatar"
+            className="rounded-lg object-cover"
+            layout="fill"
+          />
+        </div>
       ) : (
         <div className="dark:hover:bg-bray-800 flex w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 px-4 py-10 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600">
           <IoImageOutline className="mb-3 h-10 w-10 text-gray-600 dark:text-gray-400" />

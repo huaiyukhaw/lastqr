@@ -48,6 +48,7 @@ const SettingsPage: NextPage = () => {
 
   const handleDeleteShop = async () => {
     await shutdownShop(shop);
+    toast.success("Shop deleted");
   };
 
   useEffect(() => {
@@ -201,14 +202,16 @@ const SettingsPage: NextPage = () => {
                 </div>
               </div>
               <figure className="relative mx-auto h-auto w-60 max-w-full flex-none basis-1/3">
-                <iframe
-                  id="shopIframe"
-                  className={clsx(
-                    "z-20 aspect-[1/2] h-full w-full rounded-3xl bg-gray-800 p-1.5 shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(45_55_75_/_20%),_0_2rem_4rem_-2rem_rgb(45_55_75_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(45_55_75_/_20%)] dark:bg-gray-800 dark:shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(0_0_0_/_20%),_0_2rem_4rem_-2rem_rgb(0_0_0_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(0_0_0_/_20%)]"
-                  )}
-                  src={`/m/${shop.username}`}
-                  onLoad={() => setLoadingIFrame(false)}
-                />
+                {shop.username && (
+                  <iframe
+                    id="shopIframe"
+                    className={clsx(
+                      "z-20 aspect-[1/2] h-full w-full rounded-3xl bg-gray-800 p-1.5 shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(45_55_75_/_20%),_0_2rem_4rem_-2rem_rgb(45_55_75_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(45_55_75_/_20%)] dark:bg-gray-800 dark:shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(0_0_0_/_20%),_0_2rem_4rem_-2rem_rgb(0_0_0_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(0_0_0_/_20%)]"
+                    )}
+                    src={`/m/${shop.username}`}
+                    onLoad={() => setLoadingIFrame(false)}
+                  />
+                )}
                 <div
                   className={clsx(
                     "absolute inset-0 z-0 flex items-center justify-center rounded-3xl bg-gray-800 transition-all duration-700",
