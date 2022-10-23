@@ -72,7 +72,7 @@ const MenuPreview = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <div className="bg-gray-900 dark:bg-black">
-      <div className="mx-auto flex max-w-md flex-col bg-white dark:bg-gray-900 dark:text-white">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col bg-white dark:bg-gray-900 dark:text-white">
         <div className="relative h-60">
           <Image
             src={
