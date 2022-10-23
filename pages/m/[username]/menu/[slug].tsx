@@ -219,14 +219,14 @@ const MenuPreview = ({
                                               <span className="text-right">
                                                 {variant.price?.toFixed(2)}
                                               </span>
-                                              <span className="group-last/variant:hidden pr-2">
+                                              <span className="pr-2 group-last/variant:hidden">
                                                 /
                                               </span>
                                             </span>
                                           ))}
                                         </div>
                                       </div>
-                                      <div className="group-hover/item:dark:bg-gray-600 flex h-16 w-16 flex-none items-center justify-center rounded-md bg-gray-200 dark:bg-gray-700">
+                                      <div className="flex h-16 w-16 flex-none items-center justify-center rounded-md bg-gray-200 dark:bg-gray-700 group-hover/item:dark:bg-gray-600">
                                         {item.image_url ? (
                                           <Image
                                             src={item.image_url}

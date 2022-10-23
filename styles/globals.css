@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#nprogress .bar {
+  @apply !bg-blue-500;
+}
+
 @layer base {
   body {
     @apply scrollbar-hide;
