@@ -11,17 +11,17 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className="px-[5%] pt-32">
+      <main className="bg-[url('/restaurant.jpg')] bg-center">
+        <div className="relative flex min-h-screen items-center justify-center bg-gradient-to-r from-black/80 to-blue-900/80 px-[5%]">
           <div className="mx-auto w-full max-w-5xl text-center">
             <div className="mb-6">
-              <h1 className="text-4xl font-bold sm:text-6xl sm:leading-[1.1]">
+              <h1 className="text-4xl font-bold text-white sm:text-6xl sm:leading-[1.1]">
                 Create QR menus for your restaurant
               </h1>
             </div>
             <div className="mb-12">
               <div className="mx-auto max-w-xl">
-                <p className="text-lg leading-6 text-gray-800 dark:text-gray-300 sm:text-[1.4rem] sm:leading-[1.4]">
+                <p className="text-lg leading-6 text-gray-300 sm:text-[1.4rem] sm:leading-[1.4]">
                   LastQR is the cloud solution that has everything you need to
                   manage your restaurant menu.
                 </p>
