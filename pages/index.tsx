@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
 const Home: NextPage = () => {
@@ -11,8 +12,19 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-[url('/restaurant.jpg')] bg-center">
-        <div className="relative flex min-h-screen items-center justify-center bg-gradient-to-r from-black/80 to-blue-900/80 px-[5%]">
+      <main className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="relative h-full w-full">
+            <Image
+              className="h-full w-full object-cover"
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+              alt="Restaurant image"
+              layout="fill"
+            />
+          </div>
+          <div className="absolute inset-0 bg-black/75 mix-blend-multiply" />
+        </div>
+        <div className="relative flex min-h-screen items-center justify-center">
           <div className="mx-auto w-full max-w-5xl text-center">
             <div className="mb-6">
               <h1 className="text-4xl font-bold text-white sm:text-6xl sm:leading-[1.1]">
