@@ -71,24 +71,21 @@ export const ShopProvider: React.FC<React.PropsWithChildren> = ({
     if (shops.length > 0) {
       if (currentShopId) {
         getShop();
+        getMenus();
       } else {
-        setCurrentShopId(shops[0].id);
+        const currentLocalStorage = localStorage.getItem("lastqr-app-data");
+        if (currentLocalStorage) {
+          const localStorageData = JSON.parse(currentLocalStorage);
+          if (localStorageData.shop_id) {
+            setCurrentShopId((localStorageData.shop_id as string) ?? null);
+          }
+        }
       }
     } else {
       setCurrentShopId(null);
       setShop({} as Shop);
     }
   }, [shops, currentShopId]);
-
-  useEffect(() => {
-    const currentLocalStorage = localStorage.getItem("lastqr-app-data");
-    if (currentLocalStorage) {
-      const localStorageData = JSON.parse(currentLocalStorage);
-      if (localStorageData.shop_id) {
-        setCurrentShopId(localStorageData.shop_id);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     if (currentShopId) {
@@ -108,12 +105,6 @@ export const ShopProvider: React.FC<React.PropsWithChildren> = ({
         };
       }
       localStorage.setItem("lastqr-app-data", JSON.stringify(localStorageData));
-    }
-  }, [currentShopId]);
-
-  useEffect(() => {
-    if (currentShopId) {
-      getMenus();
     }
   }, [currentShopId]);
 

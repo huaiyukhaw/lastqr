@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import {
   IoFastFoodOutline,
   IoQrCodeOutline,
