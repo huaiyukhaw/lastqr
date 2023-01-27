@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             <div className="mb-12">
               <div className="mx-auto max-w-xl">
                 <p className="text-lg leading-6 text-gray-300 sm:text-[1.4rem] sm:leading-[1.4]">
-                  LastQR is the cloud solution that has everything you need to
+                  LastQR is the solution that has everything you need to
                   manage your restaurant menu.
                 </p>
               </div>
