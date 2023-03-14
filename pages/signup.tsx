@@ -12,30 +12,30 @@ const SignUpPage: NextPage = () => {
   const router = useRouter();
 
   const [loading, setLoading] = useState<boolean>(false);
-  // const [email, setEmail] = useState<string>("");
-  // const [password, setPassword] = useState<string>("");
-  // const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
 
   if (session) {
     router.push("/app");
   }
 
-  // const handleSignUp = async (email: string, password: string) => {
-  //   try {
-  //     setLoading(true);
-  //     if (password == confirmPassword) {
-  //       const { error } = await supabase.auth.signUp({
-  //         email: email,
-  //         password: password,
-  //       });
-  //       if (error) throw error;
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const handleSignUp = async (email: string, password: string) => {
+    try {
+      setLoading(true);
+      if (password == confirmPassword) {
+        const { error } = await supabase.auth.signUp({
+          email: email,
+          password: password,
+        });
+        if (error) throw error;
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSignUpWithGoogle = async () => {
     try {
@@ -109,7 +109,7 @@ const SignUpPage: NextPage = () => {
                 </svg>
                 Sign up with Google
               </button>
-              {/* <div className="flex items-center py-3 text-xs uppercase text-gray-400 before:mr-6 before:flex-[1_1_0%] before:border-t before:border-gray-200 after:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
+              <div className="flex items-center py-3 text-xs uppercase text-gray-400 before:mr-6 before:flex-[1_1_0%] before:border-t before:border-gray-200 after:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
                 Or
               </div>
               <form
@@ -252,7 +252,7 @@ const SignUpPage: NextPage = () => {
                     Sign up
                   </button>
                 </div>
-              </form> */}
+              </form>
             </div>
           </div>
         </div>

@@ -11,29 +11,29 @@ const LoginPage: NextPage = () => {
   const router = useRouter();
 
   const [loading, setLoading] = useState<boolean>(false);
-  // const [email, setEmail] = useState<string>("");
-  // const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   if (session) {
     router.push("/app");
   }
 
-  // const handleSignIn = async (email: string, password: string) => {
-  //   try {
-  //     setLoading(true);
-  //     const { error } = await supabase.auth.signInWithPassword({
-  //       email: email,
-  //       password: password,
-  //     });
-  //     if (error) {
-  //       throw error;
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const handleSignIn = async (email: string, password: string) => {
+    try {
+      setLoading(true);
+      const { error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+      });
+      if (error) {
+        throw error;
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSignInWithGoogle = async () => {
     try {
@@ -79,6 +79,7 @@ const LoginPage: NextPage = () => {
                 type="button"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-md border bg-white py-3 px-4 align-middle text-sm font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-0 dark:bg-black dark:text-white dark:hover:bg-gray-900 dark:focus:ring-offset-gray-800"
                 onClick={handleSignInWithGoogle}
+                disabled={loading}
               >
                 <svg
                   className="h-auto w-4"
@@ -106,7 +107,7 @@ const LoginPage: NextPage = () => {
                 </svg>
                 Sign in with Google
               </button>
-              {/* <div className="flex items-center py-3 text-xs uppercase text-gray-400 before:mr-6 before:flex-[1_1_0%] before:border-t before:border-gray-200 after:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
+              <div className="flex items-center py-3 text-xs uppercase text-gray-400 before:mr-6 before:flex-[1_1_0%] before:border-t before:border-gray-200 after:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
                 Or
               </div>
               <form
@@ -208,7 +209,7 @@ const LoginPage: NextPage = () => {
                     Sign in
                   </button>
                 </div>
-              </form> */}
+              </form>
             </div>
           </div>
         </div>
