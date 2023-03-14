@@ -20,6 +20,7 @@ import { Transition } from "@headlessui/react";
 import toast from "react-hot-toast";
 import { nanoid } from "nanoid";
 import { sampleMenu } from "../../data/sampleMenu";
+import Link from "next/link";
 
 const MenusPage: NextPage = () => {
   const { menus, getMenus, deleteMenu, currentShopId, createMenu } = useShop();
@@ -140,12 +141,13 @@ const MenusPage: NextPage = () => {
                     {menus?.map((menu: Menu) => (
                       <tr
                         key={menu.id}
-                        className="group cursor-pointer bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700"
-                        onClick={() => router.push(`/app/editor/${menu.id}`)}
+                        className="group bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700"
                       >
-                        <td className="relative px-6 py-4 align-middle text-sm font-medium text-gray-800 dark:text-gray-200">
-                          {menu.name}
-                        </td>
+                        <Link href={`/app/editor/${menu.id}`}>
+                          <td className="relative px-6 py-4 align-middle text-sm font-medium text-gray-800 dark:text-gray-200 cursor-pointer hover:underline underline-offset-2">
+                            {menu.name}
+                          </td>
+                        </Link>
                         <td className="whitespace-nowrap px-6 text-right align-middle text-sm text-gray-800 dark:text-gray-200">
                           {getDishCount(menu)}
                         </td>

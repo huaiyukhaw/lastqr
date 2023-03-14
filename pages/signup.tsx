@@ -241,7 +241,7 @@ const SignUpPage: NextPage = () => {
                       )}
                       id="confirm-password-error"
                     >
-                      Password does not match the password
+                      Passwords don't match
                     </p>
                   </div>
                   <button
