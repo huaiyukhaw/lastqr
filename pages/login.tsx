@@ -11,29 +11,29 @@ const LoginPage: NextPage = () => {
   const router = useRouter();
 
   const [loading, setLoading] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  // const [email, setEmail] = useState<string>("");
+  // const [password, setPassword] = useState<string>("");
 
   if (session) {
     router.push("/app");
   }
 
-  const handleSignIn = async (email: string, password: string) => {
-    try {
-      setLoading(true);
-      const { error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
-      if (error) {
-        throw error;
-      }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const handleSignIn = async (email: string, password: string) => {
+  //   try {
+  //     setLoading(true);
+  //     const { error } = await supabase.auth.signInWithPassword({
+  //       email: email,
+  //       password: password,
+  //     });
+  //     if (error) {
+  //       throw error;
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleSignInWithGoogle = async () => {
     try {
@@ -106,10 +106,9 @@ const LoginPage: NextPage = () => {
                 </svg>
                 Sign in with Google
               </button>
-              <div className="flex items-center py-3 text-xs uppercase text-gray-400 before:mr-6 before:flex-[1_1_0%] before:border-t before:border-gray-200 after:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
+              {/* <div className="flex items-center py-3 text-xs uppercase text-gray-400 before:mr-6 before:flex-[1_1_0%] before:border-t before:border-gray-200 after:ml-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">
                 Or
               </div>
-              {/* Form */}
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -117,7 +116,6 @@ const LoginPage: NextPage = () => {
                 }}
               >
                 <div className="grid gap-y-4">
-                  {/* Form Group */}
                   <div>
                     <label
                       htmlFor="email"
@@ -159,8 +157,6 @@ const LoginPage: NextPage = () => {
                       you
                     </p>
                   </div>
-                  {/* End Form Group */}
-                  {/* Form Group */}
                   <div>
                     <div className="flex items-center justify-between">
                       <label
@@ -169,14 +165,6 @@ const LoginPage: NextPage = () => {
                       >
                         Password
                       </label>
-                      {/* <Link href="/forgot">
-                        <a
-                          className="text-sm font-medium text-blue-600 decoration-2 hover:underline dark:text-blue-500"
-                          href="../../examples/html/recover-account.html"
-                        >
-                          Forgot password?
-                        </a>
-                      </Link> */}
                     </div>
                     <div className="relative">
                       <input
@@ -212,7 +200,6 @@ const LoginPage: NextPage = () => {
                       8+ characters required
                     </p>
                   </div>
-                  {/* End Form Group */}
                   <button
                     type="submit"
                     className="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-semibold text-white transition-all hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-offset-gray-800"
@@ -221,8 +208,7 @@ const LoginPage: NextPage = () => {
                     Sign in
                   </button>
                 </div>
-              </form>
-              {/* End Form */}
+              </form> */}
             </div>
           </div>
         </div>
