@@ -89,8 +89,8 @@ const SettingsPage: NextPage = () => {
                 Log out
               </button>
             </div>
-            <div className="flex gap-4">
-              <div className="flex h-fit basis-2/3 flex-col justify-between rounded-lg bg-white p-6 drop-shadow dark:bg-gray-800">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex h-fit w-full flex-col justify-between rounded-lg bg-white p-6 drop-shadow dark:bg-gray-800">
                 <div className="flex flex-col gap-5 divide-y divide-gray-200 dark:divide-gray-700">
                   <div className="space-y-1">
                     <h1 className="text-xl font-medium">Public page</h1>
@@ -201,7 +201,7 @@ const SettingsPage: NextPage = () => {
                   </button>
                 </div>
               </div>
-              <figure className="relative mx-auto h-auto w-60 max-w-full flex-none basis-1/3">
+              <figure className="relative mx-auto h-auto min-w-[240px] w-full max-w-full flex-none basis-1/3">
                 {shop.username && (
                   <iframe
                     id="shopIframe"

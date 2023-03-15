@@ -167,18 +167,17 @@ const MenusPage: NextPage = () => {
                                   "bg-white dark:bg-gray-800"
                                 )}
                               >
-                                <DropdownMenu.Item
-                                  className={clsx(
-                                    "flex w-full cursor-pointer select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                                    "text-gray-700 focus:bg-gray-50 dark:text-gray-300 dark:focus:bg-gray-900"
-                                  )}
-                                  onClick={() =>
-                                    router.push(`/app/editor/${menu.id}`)
-                                  }
-                                >
-                                  <HiPencil className="h-3 w-3" />
-                                  <span className="ml-1.5">Edit</span>
-                                </DropdownMenu.Item>
+                                <Link href={`/app/editor/${menu.id}`}>
+                                  <DropdownMenu.Item
+                                    className={clsx(
+                                      "flex w-full cursor-pointer select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                                      "text-gray-700 focus:bg-gray-50 dark:text-gray-300 dark:focus:bg-gray-900"
+                                    )}
+                                  >
+                                    <HiPencil className="h-3 w-3" />
+                                    <span className="ml-1.5">Edit</span>
+                                  </DropdownMenu.Item>
+                                </Link>
                                 <DropdownMenu.Item
                                   className={clsx(
                                     "flex w-full cursor-pointer select-none items-center rounded-md px-2 py-2 text-xs outline-none",
