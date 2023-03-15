@@ -1,34 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LastQR
 
-## Getting Started
+> Create QR menus for your restaurant.
 
-First, run the development server:
+Try it! [lastqr.huaiyukhaw.com](https://lastqr.huaiyukhaw.com)
 
-```bash
+LastQR is a web-based application that allows restaurant customers to access menus via QR codes. The app was developed using modern web technologies, including React, Next.js, TailwindCSS, and Supabase.
+
+---
+
+## Author
+
+**Huaiyu Khaw** 
+- *Initial work* - [LastQR](https://github.com/huaiyukhaw/lastqr) (GitHub)
+- *Released on* [Vercel](https://vercel.com)
+- *My professional profile on* [LinkedIn](https://www.linkedin.com/in/huaiyukhaw)
+
+## Showcase
+
+This project was designed to demonstrate:
+
+- Use of React with Typescript and TailwindCSS to build a modern and responsive user interface.
+- Utilization of a variety of libraies, such as @shortcm/qr-image for QR code generation and React Hot Toast for notifications.
+- Implementation of asynchronous programming techniques to fetch and manipulate data from a backend-as-a-service platform.
+
+LastQR is a web-based application that allows restaurant customers to access menus via QR codes. The app was developed using modern web technologies, including React, Next.js, TailwindCSS, and Supabase.
+
+The front-end of the app was built using React, which provides a component-based architecture for building user interfaces. I used Next.js as the framework to support server-side rendering, which improves the app's performance and search engine optimization. To design the app's user interface, I used TailwindCSS, a utility-first CSS framework that provides pre-built styles and classes for rapid development.
+
+The app's functionality was implemented using React's state management and lifecycle methods, which provides interactivity and logic to the user interface. Specifically, the app uses React hooks to handle QR code scanning, API requests, and menu item selection. To ensure that the app is fast and responsive, I used asynchronous programming techniques, such as Promises and async/await, to handle API requests and prevent blocking the user interface. To fetch menu data from the back-end, the app uses Supabase, a backend-as-a-service platform that provides a PostgreSQL database and API.
+
+During the development process, I used several development tools and libraries to improve my productivity and code quality. For example, I used Visual Studio Code as my code editor, and Git for version control. Additionally, I used a variety of libraries, including @shortcm/qr-image for QR code generation, and React Hot Toast for notifications.
+
+## Usage example
+
+The usage of the QR Menu App is straightforward: diners simply scan the QR code using their smartphone's camera, and the app will take them to the restaurant's digital menu. From there, they can browse through the items, without the need for physical menus. This makes the dining experience more convenient and efficient, especially during busy hours.
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/31930091/225359728-0e182455-de41-4131-883d-6b92bd0ac87d.png)
+
+![image](https://user-images.githubusercontent.com/31930091/225359301-6e3965a0-4891-437a-9a9e-2dd1ffc5604d.png)
+
+![image](https://user-images.githubusercontent.com/31930091/225359169-4c26334b-5bcc-46cb-bc60-b4b465609480.png)
+
+---
+
+## Development setup
+
+```sh
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Built With
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [React](https://reactjs.org)
+- [Next.js](https://nextjs.org)
+- [Typescript](https://www.typescriptlang.org)
+- [TailwindCSS](https://tailwindcss.com)
+- [Radix](https://www.radix-ui.com) - unstyled, accessible components
+- [@shortcm/qr-image](https://github.com/Short-io/qr-image) - qr code generation
+- [React Hot Toast](https://react-hot-toast.com) - notifications
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork it (<https://github.com/huaiyukhaw/lastqr/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
