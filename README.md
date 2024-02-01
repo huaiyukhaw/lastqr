@@ -182,11 +182,24 @@ alter publication supabase_realtime
   add table menus;
 ```
 
-- Automatically update timestamp
+- Automatically update timestamp (for Shops table)
 ```sql
 create extension if not exists moddatetime schema extensions;
 
 -- assuming the table name is "shops", and a timestamp column "updated_at"
+-- this trigger will set the "updated_at" column to the current timestamp for every update
+create trigger
+  handle_updated_at before update
+on shops
+for each row execute
+  procedure moddatetime(updated_at);
+```
+
+- Automatically update timestamp (for Menus table)
+```sql
+create extension if not exists moddatetime schema extensions;
+
+-- assuming the table name is "menus", and a timestamp column "updated_at"
 -- this trigger will set the "updated_at" column to the current timestamp for every update
 create trigger
   handle_updated_at before update
